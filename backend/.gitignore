@@ -1,0 +1,27 @@
+# Node modules (backend & frontend)
+node_modules/
+*/node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# Build outputs
+dist/
+build/
+.vite/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
