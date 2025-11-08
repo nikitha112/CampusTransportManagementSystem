@@ -54,7 +54,7 @@ function AdminDashboard({ user, onLogout }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/routes/add", {
+      const res = await fetch("https://campustransportmanagementsystem-1.onrender.com/api/routes/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,7 @@ function AdminDashboard({ user, onLogout }) {
     if (!updatedName) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/routes/${routeId}`, {
+      const res = await fetch(`https://campustransportmanagementsystem-1.onrender.com/api/routes/${routeId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,7 @@ function AdminDashboard({ user, onLogout }) {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/buses/${busNumber}/assign-driver`,
+        `https://campustransportmanagementsystem-1.onrender.com/api/buses/${busNumber}/assign-driver`,
         {
           method: "PUT",
           headers: {
@@ -135,7 +135,7 @@ function AdminDashboard({ user, onLogout }) {
   const handleViewReport = async (routeName) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/routes/report/${routeName}`,
+        `https://campustransportmanagementsystem-1.onrender.com/api/routes/report/${routeName}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const data = await res.json();
@@ -150,7 +150,7 @@ function AdminDashboard({ user, onLogout }) {
   const handleCollectFee = async (studentId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/users/${studentId}/fee`,
+        `https://campustransportmanagementsystem-1.onrender.com/api/users/${studentId}/fee`,
         {
           method: "PUT",
           headers: {
@@ -173,7 +173,7 @@ function AdminDashboard({ user, onLogout }) {
   // ✅ Mark Attendance
   const handleMarkAttendance = async (studentId, routeName) => {
     try {
-      const res = await fetch("http://localhost:5000/api/attendance", {
+      const res = await fetch("https://campustransportmanagementsystem-1.onrender.com/api/attendance", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -194,7 +194,7 @@ function AdminDashboard({ user, onLogout }) {
   // ✅ View Attendance Summary
   const fetchAttendance = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/attendance", {
+      const res = await fetch("https://campustransportmanagementsystem-1.onrender.com/api/attendance", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -208,7 +208,7 @@ function AdminDashboard({ user, onLogout }) {
   const handleSendAlert = async () => {
     if (!message.trim()) return alert("Enter a message");
     try {
-      const res = await fetch("http://localhost:5000/api/alerts", {
+      const res = await fetch("https://campustransportmanagementsystem-1.onrender.com/api/alerts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
