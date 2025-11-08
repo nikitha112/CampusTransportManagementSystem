@@ -23,16 +23,16 @@ function AdminDashboard({ user, onLogout }) {
   const fetchData = async () => {
     try {
       const [routeRes, busRes, userRes, alertRes] = await Promise.all([
-        fetch("http://localhost:5000/api/routes", {
+        fetch('https://campustransportmanagementsystem-1.onrender.com/api/routes', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:5000/api/buses", {
+        fetch('https://campustransportmanagementsystem-1.onrender.com/api/buses', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:5000/api/users", {
+        fetch('https://campustransportmanagementsystem-1.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:5000/api/alerts", {
+        fetch("https://campustransportmanagementsystem-1.onrender.com/api/alerts", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./Login.css";
-
-const API_URL = "http://localhost:5000/api";
+import API_BASE_URL from "../config"; // ✅ Add this import
 
 function Login({ role, onSwitchToRegister, onLogin }) {
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ function Login({ role, onSwitchToRegister, onLogin }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔄 Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -22,18 +20,16 @@ function Login({ role, onSwitchToRegister, onLogin }) {
     setError("");
   };
 
-  // 🚀 Handle login submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      // Different API endpoints for admin and student
       const endpoint =
         role === "admin"
-          ? `${API_URL}/auth/login/admin`
-          : `${API_URL}/auth/login`;
+          ? `${API_BASE_URL}/auth/login/admin`
+          : `${API_BASE_URL}/auth/login`;
 
       const payload =
         role === "admin"
@@ -70,7 +66,6 @@ function Login({ role, onSwitchToRegister, onLogin }) {
 
           {error && <div className="error-message">{error}</div>}
 
-          {/* 👩‍🎓 Student login uses Student ID only */}
           {role === "student" && (
             <div className="form-group">
               <label htmlFor="studentId">Student ID</label>
@@ -86,7 +81,6 @@ function Login({ role, onSwitchToRegister, onLogin }) {
             </div>
           )}
 
-          {/* ✉️ Admin login uses Email */}
           {role === "admin" && (
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -102,7 +96,6 @@ function Login({ role, onSwitchToRegister, onLogin }) {
             </div>
           )}
 
-          {/* 🔒 Password field */}
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
@@ -120,7 +113,6 @@ function Login({ role, onSwitchToRegister, onLogin }) {
             {loading ? "Logging in..." : "Login"}
           </button>
 
-          {/* 🧾 Registration only for students */}
           {role === "student" && (
             <div className="auth-footer">
               <p>

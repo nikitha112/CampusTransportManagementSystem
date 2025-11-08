@@ -6,7 +6,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './LiveTracker.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://campustransportmanagementsystem-1.onrender.com/api';
 
 // small helper to recenter / fit markers
 function FitBounds({ positions }) {

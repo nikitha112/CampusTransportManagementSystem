@@ -1,7 +1,3 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+const API_BASE_URL = "https://campustransportmanagementsystem-1.onrender.com";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default API_BASE_URL;

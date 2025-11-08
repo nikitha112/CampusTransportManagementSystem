@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = 'https://campustransportmanagementsystem-1.onrender.com/api';
 const busStopIcon = L.divIcon({ html: "🚏", className: "custom-div-icon", iconSize: [30, 30] });
 
 export default function PickupFinder() {

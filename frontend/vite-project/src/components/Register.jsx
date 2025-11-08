@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./Register.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://campustransportmanagementsystem-1.onrender.com/api";
 
 function Register({ onSwitchToLogin, onRegister }) {
   const [formData, setFormData] = useState({
